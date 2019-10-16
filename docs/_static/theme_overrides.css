@@ -22,34 +22,6 @@
    .wy-menu-vertical header,
    .wy-menu-vertical p.caption {color: #32a55c}
 
-  /* language panel */
-   .pageheader ul {
-      float: right;
-      color: white;
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 30px;
-      margin-right: 10px;
-  }
-  
-  .pageheader li {
-      float: left;
-      margin: 0 0 0 10px; 
-  }
-  
-  .pageheader li a {
-      border-radius: 1px;
-      padding: 8px 12px;
-      color: #f9f9f0;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  .pageheader li a:hover {
-      background-color: #f9f9f0;
-      color: #0a507a;
-      text-shadow: none;
-  }
-
 /* Colors and text decoration.
  For example, :black:`text in black` or :blink:`text blinking` in rST.
  В общем сначала на странице прописываем руками роли а потом уже вызываем внутри текста, например :red:`красный текст`. Роли:
