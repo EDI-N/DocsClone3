@@ -394,11 +394,3 @@ epub_exclude_files = ['search.html']
 #epub_use_index = True
 
 
-notfound_context = {
-    'title': 'Page Not Found',
-    'body': '''
-<h1>Page Not Found</h1>
-<p>Sorry, we couldn't find that page.</p>
-<p>Try using the search box or go to the homepage.</p>
-''',
-}

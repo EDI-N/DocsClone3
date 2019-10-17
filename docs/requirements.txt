@@ -1,2 +1,2 @@
 -e git://github.com/ulrobix/sphinxcontrib-contentui.git#egg=sphinxcontrib-contentui
--e git://github.com/readthedocs/sphinx-notfound-page#egg=sphinx-notfound-page
+sphinx-notfound-page==0.3
