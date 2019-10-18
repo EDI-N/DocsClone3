@@ -17,14 +17,11 @@ class BaseURIError(ExtensionError):
 def html_collect_pages(app):
     """
     Create a ``404.html`` page.
-
     Uses ``notfound_template`` as a template to be rendered with
     ``notfound_context`` for its context. The resulting file generated is
     ``notfound_pagename``.html.
-
     If the user already defined a page with pagename title
     ``notfound_pagename``, we don't generate this page.
-
     :param app: Sphinx Application
     :type app: sphinx.application.Sphinx
     """
@@ -44,30 +41,22 @@ def html_collect_pages(app):
 def finalize_media(app, pagename, templatename, context, doctree):
     """
     Point media files at our media server.
-
     Generate absolute URLs for resources (js, images, css, etc) to point to the
     right. For example, if a URL in the page is ``_static/js/custom.js`` it will
     be replaced by ``/<notfound_default_language>/<notfound_default_version>/_static/js/custom.js``.
-
     On the other hand, if ``notfound_no_urls_prefix`` is set, it will be
     replaced by ``/_static/js/custom.js``.
-
     Also, all the links from the sidebar (toctree) are replaced with their
     absolute version. For example, ``../section/pagename.html`` will be replaced
     by ``/section/pagename.html``.
-
     :param app: Sphinx Application
     :type app: sphinx.application.Sphinx
-
     :param pagename: name of the page being rendered
     :type pagename: str
-
     :param templatename: template used to render the page
     :type templatename: str
-
     :param context: context used to render the page
     :type context: dict
-
     :param doctree: doctree of the page being rendered
     :type doctree: docutils.nodes.document
     """
@@ -76,12 +65,9 @@ def finalize_media(app, pagename, templatename, context, doctree):
     def pathto(otheruri, resource=False, baseuri=None):
         """
         Hack pathto to display absolute URL's.
-
         Instead of calling ``relative_url`` function, we call
         ``app.builder.get_target_uri`` to get the absolut URL.
-
         .. note::
-
             If ``otheruri`` is a external ``resource`` it does not modify it.
         """
         if resource and '://' in otheruri:
@@ -157,10 +143,8 @@ def finalize_media(app, pagename, templatename, context, doctree):
 def doctree_resolved(app, doctree, docname):
     """
     Generate and override URLs for ``.. image::`` Sphinx directive.
-
     When ``.. image::`` is used in the ``404.rst`` file, this function will
     override the URLs to point to the right place.
-
     :param app: Sphinx Application
     :type app: sphinx.application.Sphinx
     :param doctree: doctree representing the document
@@ -188,7 +172,7 @@ def setup(app):
     # TODO: get these values from Project's settings
     default_version = os.environ.get('READTHEDOCS_VERSION', 'latest')
 
-    app.add_config_value('notfound_default_language', 'uk', 'html')
+    app.add_config_value('notfound_default_language', 'en', 'html')
     app.add_config_value('notfound_default_version', default_version, 'html')
     app.add_config_value('notfound_no_urls_prefix', False, 'html')
 
@@ -209,4 +193,4 @@ def setup(app):
         'version': version,
         'parallel_read_safe': True,
         'parallel_write_safe': True,
-    }
+}

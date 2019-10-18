@@ -6,21 +6,16 @@ from sphinx.builders.html import DirectoryHTMLBuilder
 def replace_uris(app, doctree, nodetype, nodeattr):
     """
     Replace ``nodetype`` URIs from ``doctree`` to the proper one.
-
     If ``nodetype`` is an image (``docutils.nodes.image``), the URL is prefixed
     with ``Builder.imagedir`` and the original image path is added to
     ``Builder.images`` so it's copied using Sphinx's internals before
     finalizing the building.
-
     :param app: Sphinx Application
     :type app: sphinx.application.Sphinx
-
     :param doctree: doctree representing the document
     :type doctree: docutils.nodes.document
-
     :param nodetype: type of node to replace URIs
     :type nodetype: docutils.nodes.Node
-
     :param nodeattr: node attribute to be replaced
     :type nodeattr: str
     """
@@ -76,4 +71,4 @@ def replace_uris(app, doctree, nodetype, nodeattr):
                     not olduri.startswith('data:'),
                     '://' not in olduri,
             ]):
-                app.builder.images[olduri] = olduri.split('/')[-1]
+app.builder.images[olduri] = olduri.split('/')[-1]
