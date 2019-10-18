@@ -393,4 +393,7 @@ epub_exclude_files = ['search.html']
 # If false, no index is generated.
 #epub_use_index = True
 
-
+notfound_context = {
+        'body': '<h1>Page not found.</h1>\n\nPerhaps try the <a href="http://docs.pyvista.org/examples/index.html">examples page</a>.',
+}
+notfound_no_urls_prefix = True
