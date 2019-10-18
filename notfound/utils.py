@@ -53,7 +53,7 @@ def replace_uris(app, doctree, nodetype, nodeattr):
                 imagedir=imagedir,
             )
         else:
-            uri = '/{language}/{version}/{imagedir}{filename}'.format(
+            uri = '/uk/latest/{imagedir}{filename}'.format(
                 language=app.config.notfound_default_language,
                 version=app.config.notfound_default_version,
                 imagedir=imagedir,

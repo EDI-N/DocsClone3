@@ -81,7 +81,7 @@ def finalize_media(app, pagename, templatename, context, doctree):
             if app.config.notfound_no_urls_prefix:
                 baseuri = '/'
             else:
-                baseuri = '/{language}/{version}/'.format(
+                baseuri = '/uk/latest/'.format(
                     language=app.config.notfound_default_language,
                     version=app.config.notfound_default_version,
                 )
